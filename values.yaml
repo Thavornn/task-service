@@ -1,0 +1,9 @@
+replicaCount: 1
+
+image:
+  repository: "pinkmelon/task-service"
+  tag: "1"
+
+service:
+  type: LoadBalancer
+  port: 8084
