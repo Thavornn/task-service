@@ -1,24 +1,13 @@
 apiVersion: v1
-kind: ConfigMap
+kind: Service
 metadata:
-  name: {{ .Values.configMapName }}
-  namespace: {{ .Release.Namespace }}
-data:
-  SPRING_DATASOURCE_URL: "jdbc:postgresql://128.199.251.237:5435/user_db"
-  SPRING_DATASOURCE_USERNAME: "user_db"
-  SPRING_DATASOURCE_PASSWORD: 'ZnS4aBoQC-_T+''"XJI'
-  KEYCLOAK_URL: "https://keycloak.hrdportal.systems"
-  SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: "https://keycloak.hrdportal.systems/realms/hrd-portal"
-  SPRING_DATA_REDIS_HOST: "redis.redis.svc.cluster.local"
-  SPRING_DATA_REDIS_PORT: "6379"
-  SPRING_CACHE_TYPE: "redis"
-  KAFKA_BOOTSTRAP_SERVERS: "kafka-svc.kafka.svc.cluster.local:9092"
-  EUREKA_CLIENT_REGISTER_WITH_EUREKA: "false"
-  EUREKA_CLIENT_FETCH_REGISTRY: "false"
-  SPRING_PROFILES_ACTIVE: "prod"
-  KEYCLOAK_CLIENT_ID: "oauth-admin-client"
-  KEYCLOAK_CLIENT_SECRET: "DL0k4XJKOloyUcYepUd6PPr5jgu77YKC"
-  KEYCLOAK_SERVER_URL: "https://keycloak.hrdportal.systems"
-  KEYCLOAK_REALM: "hrd-portal"
-  SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_CLASSROOM_SERVICE_URL: "http://128.199.251.237:8085"
-  SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_USER_MANAGEMENT_SERVICE_URL: "http://128.199.251.237:8086"
+  name: "{{ .Chart.Name }}"
+  labels:
+    app: "{{ .Chart.Name }}"
+spec:
+  type: { { .Values.service.type } }
+  selector:
+    app: "{{ .Chart.Name }}"
+  ports:
+    - port: { { .Values.service.port } }
+      targetPort: { { .Values.service.port } }
