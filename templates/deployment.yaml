@@ -26,5 +26,3 @@ spec:
               value: "task_db"
             - name: SPRING_DATASOURCE_PASSWORD
               value: '\,4<|F0iABBkAJ4&Y;'
-
-        
