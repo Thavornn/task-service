@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: "pinkmelon/task-service"
-  tag: 47
+  tag: 49
 
 service:
   type: LoadBalancer
