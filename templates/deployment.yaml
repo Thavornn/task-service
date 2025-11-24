@@ -38,7 +38,7 @@ spec:
             - name: EUREKA_CLIENT_FETCH_REGISTRY
               value: "false"
             - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI
-              value: "https://keycloak.hrdportal.systems/realms/hrd-portal"
+              value: "https://keycloak-new.hrdportal.systems/realms/hrd-portal"
             - name: SPRING_PROFILES_ACTIVE
               value: "prod"
 
