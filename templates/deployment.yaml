@@ -22,7 +22,7 @@ spec:
             - containerPort: {{ .Values.service.port }}
           env:
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:postgresql://128.199.251.237:5437/task_db"
+              value: "jdbc:postgresql://146.190.193.49:5437/task_db"
             - name: SPRING_DATASOURCE_USERNAME
               value: "task_db"
             - name: SPRING_DATASOURCE_PASSWORD
@@ -41,6 +41,9 @@ spec:
               value: "https://keycloak.hrdportal.systems/realms/hrd-portal"
             - name: SPRING_PROFILES_ACTIVE
               value: "prod"
+
+
+
   
             
 
