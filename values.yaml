@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: "pinkmelon/task-service"
-  tag: 56
+  tag: 57
 
 service:
   type: NodePort
